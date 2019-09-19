@@ -1,0 +1,31 @@
+//
+//  test.pch
+//  test
+//
+//  Created by weiguang on 2019/9/18.
+//  Copyright © 2019 duia. All rights reserved.
+//
+
+#ifndef test_pch
+#define test_pch
+
+
+#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+# define GALLog(fmt, ...) NSLog((@"[路径:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String], __FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+//#ifdef DEBUG
+//
+//#else
+//# define GALLog(fmt,...) NSLog(@"" fmt);
+////# define GALLog(...);
+//#endif
+
+
+
+#ifdef __OBJC__
+
+
+#endif
+
+#endif /* test_pch */
