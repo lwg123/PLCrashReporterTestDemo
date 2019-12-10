@@ -9,21 +9,15 @@
 #ifndef test_pch
 #define test_pch
 
-
-#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-
-# define GALLog(fmt, ...) NSLog((@"[路径:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String], __FUNCTION__, __LINE__, ##__VA_ARGS__);
-
-//#ifdef DEBUG
-//
-//#else
-//# define GALLog(fmt,...) NSLog(@"" fmt);
-////# define GALLog(...);
-//#endif
-
-
-
 #ifdef __OBJC__
+
+#import "DATool.h"
+#import "MicroConst.h"
+
+
+// 第三方库头文件
+#import <MJExtension.h>
+#import <YYModel.h>
 
 
 #endif

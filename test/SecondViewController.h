@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-//typedef void(^Backblock)(void);
+
 
 @interface SecondViewController : UIViewController
-//@property (nonatomic,copy) Backblock backblock;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import <AFNetworking.h>
+#import <NSLogger.h>
+
+#ifdef DEBUG
+#import <DoraemonKit/DoraemonManager.h>
+#endif
 
 @interface AppDelegate ()
 
@@ -20,8 +25,17 @@
     
     
 #ifdef DEBUG
-    [self saveLogToLocalFile];
+   
+    // 默认
+   // [[DoraemonManager shareInstance] install];
 #endif
+
+    
+    //LoggerSetupBonjourForBuildUser();
+    // 保存本地日志
+//    NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *logPath = [cacheDirectory stringByAppendingPathComponent:@"log.rawnsloggerdata"];
+//    LoggerSetBufferFile(NULL, (__bridge CFStringRef)logPath);
     
     return YES;
 }
@@ -31,6 +45,7 @@
     
     [self backgroundHandler];
 }
+
 
 - (void)backgroundHandler {
     
@@ -67,31 +82,6 @@
 }
 
 
-#pragma mark - 日志收集
-- (void)saveLogToLocalFile
-{
-    NSString * localF = [kDocumentPath stringByAppendingPathComponent:@"APPLog"];
-    
-    if(![[NSFileManager defaultManager] fileExistsAtPath:localF]){
-        [[NSFileManager defaultManager] createDirectoryAtPath:localF withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    
-    // 日期作为文件名
-    NSDateFormatter *dateformat = [[NSDateFormatter  alloc]init];
-    [dateformat setDateFormat:@"yyyy-MM-dd"];
-    NSString *fileName = [NSString stringWithFormat:@"LOG-%@.txt",[dateformat stringFromDate:[NSDate date]]];
-    NSString * logFilePath = [localF stringByAppendingPathComponent:fileName];
-    NSLog(@"保存日志路径:%@",logFilePath);
-    // 文件过大删除
-    if([[[NSFileManager defaultManager] attributesOfItemAtPath:localF error:nil] fileSize]>1024*1024*10){
-        [[NSFileManager defaultManager] removeItemAtPath:localF error:nil];
-    }
-    
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
-    
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
-    
-}
 
 
 @end

@@ -97,36 +97,14 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/AppIcon.appiconset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_backImage.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_csjg_fx.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_guanggao_guanbi.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_message_shanchuheise.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_message_tongzhijiantou.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_videowuwangtish.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_MessageImportantTableViewController.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_NoWifiLogoView.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_PriceSetViewController.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_SkuPicView.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_SSXMessageImportantTableViewCell.xib"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DAIMKit/DAIMKit.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DoraemonKit/DoraemonKit.bundle"
+  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/AppIcon.appiconset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_backImage.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_csjg_fx.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_guanggao_guanbi.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_message_shanchuheise.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_message_tongzhijiantou.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/DAIM.xcassets/im_videowuwangtish.imageset/Contents.json"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_MessageImportantTableViewController.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_NoWifiLogoView.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_PriceSetViewController.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_SkuPicView.xib"
-  install_resource "${PODS_ROOT}/DAIMKit/DAIMKit/Resource/IM_SSXMessageImportantTableViewCell.xib"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/DAIMKit/DAIMKit.bundle"
+  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
+fi
+if [[ "$CONFIGURATION" == "Adhoc" ]]; then
+  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

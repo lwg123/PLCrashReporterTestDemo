@@ -14,25 +14,83 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - BSBacktraceLogger (0.0.1)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
   - CTMediator (25)
+  - DoraemonKit/Core (1.2.3):
+    - BSBacktraceLogger
+    - fishhook
+    - PNChart
+  - DoraemonKit/WithGPS (1.2.3):
+    - BSBacktraceLogger
+    - DoraemonKit/Core
+    - fishhook
+    - PNChart
+  - DoraemonKit/WithLoad (1.2.3):
+    - BSBacktraceLogger
+    - DoraemonKit/Core
+    - fishhook
+    - PNChart
+  - DoraemonKit/WithLogger (1.2.3):
+    - BSBacktraceLogger
+    - CocoaLumberjack
+    - DoraemonKit/Core
+    - fishhook
+    - PNChart
+  - fishhook (0.2)
+  - IQKeyboardManager (6.5.0)
+  - MJExtension (3.1.0)
+  - NSLogger (1.9.7):
+    - NSLogger/ObjC (= 1.9.7)
+  - NSLogger/ObjC (1.9.7)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
+  - UICountingLabel (1.2.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
   - CTMediator
+  - DoraemonKit/Core (~> 1.2.3)
+  - DoraemonKit/WithGPS (~> 1.2.3)
+  - DoraemonKit/WithLoad (~> 1.2.3)
+  - DoraemonKit/WithLogger (~> 1.2.3)
+  - IQKeyboardManager
+  - MJExtension
+  - NSLogger
   - YYModel (~> 1.0.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - BSBacktraceLogger
+    - CocoaLumberjack
     - CTMediator
+    - DoraemonKit
+    - fishhook
+    - IQKeyboardManager
+    - MJExtension
+    - NSLogger
+    - PNChart
+    - UICountingLabel
     - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
+  DoraemonKit: c1e675735a94db6ca7ad6ffac256d6baddc00afb
+  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
+  IQKeyboardManager: 700e5155d6a292383b54e8678aec769e14fc78fc
+  MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
+  NSLogger: cf3013a4fba189f631f07e6c3d5b8ce2b209654b
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: aae055e8862250454c20dcc8d18c116dddab843d
+PODFILE CHECKSUM: 80eeb8200786e449ebe2787d508fefb14d47155c
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
