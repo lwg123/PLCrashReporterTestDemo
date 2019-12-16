@@ -10,6 +10,8 @@
 #import "SecondViewController.h"
 #import "Persion.h"
 #import <NSLogger.h>
+//#import <PLCrashReporter.h>
+
 
 @interface ViewController ()
 
@@ -30,11 +32,27 @@
     
     GALLog(@"测试一下");
    // [self test2];
-    
-    LoggerApp(1,@"Hello world! Today is:%@",[NSDate date]);
-    LoggerNetwork(1,@"Hello world! Today is:%@",[NSDate date]);
+    [self cocoaLumberjackDemo];
+   
 }
 
+
+#pragma mark - CocoaLumberjack 用法
+- (void)cocoaLumberjackDemo {
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24;
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+    
+    NSLog(@"cocoaLumberjackDemo");
+    
+//    DDLogDebug(@"Debug");
+//    DDLogInfo(@"Info");
+//    DDLogWarn(@"Warn");
+//    DDLogError(@"Error");
+    
+}
 
 
 #pragma mark - 'CGRectDivide' 使用方法

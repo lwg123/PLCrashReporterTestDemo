@@ -15,5 +15,9 @@ target 'test' do
   pod 'DoraemonKit/WithLoad', '~> 1.2.3', :configurations => ['Debug'] #可选
   #pod 'DoraemonKit/WithWeex', '~> 1.2.3', :configurations => ['Debug'] #可选
 #  pod 'DoraemonKit/WithDatabase', '~> 1.2.3', :configurations => ['Debug'] #可选
-
+  pod 'PLCrashReporter'
+  
+  #日志输出
+  pod 'CocoaLumberjack'
+  
 end

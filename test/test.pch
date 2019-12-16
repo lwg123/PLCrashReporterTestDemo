@@ -19,6 +19,7 @@
 #import <MJExtension.h>
 #import <YYModel.h>
 
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #endif
 

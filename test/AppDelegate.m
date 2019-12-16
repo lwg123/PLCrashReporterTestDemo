@@ -29,7 +29,8 @@
     // 默认
    // [[DoraemonManager shareInstance] install];
 #endif
-
+    
+    [DDLog addLogger:[DDOSLogger sharedInstance]];
     
     //LoggerSetupBonjourForBuildUser();
     // 保存本地日志

@@ -24,7 +24,7 @@
     UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = backBtnItem;
     
-    [self timeCutDown:@"2019-11-6 09:30:00"];
+    [self timeCutDown:@"2019-12-16 09:30:00"];
 }
 
 - (void)back {
@@ -63,6 +63,7 @@
     
 }
 
+// 传秒要*1000，传m毫秒就不用
 - (void)getDetailTimeWithTimestamp:(NSInteger)timestamp
 {
     NSInteger ms = timestamp*1000;

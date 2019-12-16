@@ -123,6 +123,7 @@
 		D1ED2BD322C9FE8E0081BC26 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				D1EF3F8E239F80220000F261 /* Libs */,
 				D13CA842234050E700F9DE0B /* Support */,
 				D19881FD23335E8A00AE84C0 /* Tools */,
 				D19881F52333251100AE84C0 /* BaseClass */,
@@ -143,6 +144,13 @@
 				D19881FC23332A2000AE84C0 /* MicroConst.h */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		D1EF3F8E239F80220000F261 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
 			sourceTree = "<group>";
 		};
 		E828C5350185F474143D1CBB /* Frameworks */ = {
@@ -380,6 +388,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ8CMT39QL;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = test/test.pch;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
@@ -514,6 +523,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ8CMT39QL;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = test/test.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -544,6 +554,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ8CMT39QL;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = test/test.pch;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
