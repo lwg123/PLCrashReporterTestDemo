@@ -1,0 +1,2 @@
+# CocoaLumberjack-PLCrashReporterDemo
+PLCrashReporter和PLCrashReporter库使用监听crash和输出日志
