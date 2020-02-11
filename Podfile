@@ -8,15 +8,12 @@ target 'test' do
   pod 'MJExtension'
   pod 'NSLogger'
   pod 'IQKeyboardManager'
-  
-  pod 'DoraemonKit/Core', '~> 1.2.3', :configurations => ['Debug'] #必选
-#  pod 'DoraemonKit/WithLogger', '~> 1.2.3', :configurations => ['Debug'] #可选
-#  pod 'DoraemonKit/WithGPS', '~> 1.2.3', :configurations => ['Debug'] #可选
-#  pod 'DoraemonKit/WithLoad', '~> 1.2.3', :configurations => ['Debug'] #可选
  
   pod 'PLCrashReporter'
   
   #日志输出
   pod 'PLCrashReporter'
+  
+  pod 'Masonry'
   
 end

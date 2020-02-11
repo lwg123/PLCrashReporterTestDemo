@@ -11,7 +11,7 @@
 #import <NSLogger.h>
 
 #ifdef DEBUG
-#import <DoraemonKit/DoraemonManager.h>
+//#import <DoraemonKit/DoraemonManager.h>
 #endif
 
 @interface AppDelegate ()
@@ -30,7 +30,7 @@
    // [[DoraemonManager shareInstance] install];
 #endif
     
-    [DDLog addLogger:[DDOSLogger sharedInstance]];
+   
     
     //LoggerSetupBonjourForBuildUser();
     // 保存本地日志

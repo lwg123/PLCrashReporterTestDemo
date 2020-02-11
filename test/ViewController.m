@@ -40,17 +40,12 @@
 #pragma mark - CocoaLumberjack 用法
 - (void)cocoaLumberjackDemo {
     
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency = 60 * 60 * 24;
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [DDLog addLogger:fileLogger];
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+//    fileLogger.rollingFrequency = 60 * 60 * 24;
+//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//    [DDLog addLogger:fileLogger];
     
     NSLog(@"cocoaLumberjackDemo");
-    
-//    DDLogDebug(@"Debug");
-//    DDLogInfo(@"Info");
-//    DDLogWarn(@"Warn");
-//    DDLogError(@"Error");
     
 }
 

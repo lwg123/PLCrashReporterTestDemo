@@ -24,8 +24,14 @@
     UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = backBtnItem;
     
-    [self timeCutDown:@"2019-12-16 09:30:00"];
+    //[self timeCutDown:@"2019-12-16 09:30:00"];
 }
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
+
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
@@ -66,7 +72,7 @@
 // 传秒要*1000，传m毫秒就不用
 - (void)getDetailTimeWithTimestamp:(NSInteger)timestamp
 {
-    NSInteger ms = timestamp*1000;
+    NSInteger ms = timestamp;
     NSInteger ss = 1;
     NSInteger mi = ss * 60;
     NSInteger hh = mi * 60;
@@ -78,6 +84,23 @@
     NSInteger second = (ms - day * dd - hour * hh - minute * mi) / ss;// 秒
     NSLog(@"%zd日:%zd时:%zd分:%zd秒",day,hour,minute,second);
     
+}
+
+- (void)shareToApp {
+    NSString *textToShare = @"要分享的文本内容";
+     UIImage *imageToShare = [UIImage imageNamed:@"iosshare"];
+    // NSURL *urlToShare = [NSURL URLWithString:@"http://www.baidu.com"];
+
+     NSArray *activityItems = @[textToShare, imageToShare];
+     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+     [self presentViewController:activityVC animated:YES completion:nil];
+     
+     UIActivityViewControllerCompletionWithItemsHandler myBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
+             if (completed){
+                 NSLog(@"completed");
+             }
+         };
+     activityVC.completionWithItemsHandler = myBlock;
 }
 
 
