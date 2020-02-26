@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5020DFDF1499AEB597D7A03B /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CA0FE89C7AE61308DCC9C7 /* libPods-test.a */; };
 		D13CA8442340515700F9DE0B /* demo说明.txt in Resources */ = {isa = PBXBuildFile; fileRef = D13CA8432340515700F9DE0B /* demo说明.txt */; };
-		D18722BE233DA7E300616E3E /* Persion.m in Sources */ = {isa = PBXBuildFile; fileRef = D18722BD233DA7E300616E3E /* Persion.m */; };
 		D19881F82333252000AE84C0 /* ApiBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D19881F62333251F00AE84C0 /* ApiBase.m */; };
 		D19881FB2333284000AE84C0 /* DAApiBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D19881F92333284000AE84C0 /* DAApiBase.m */; };
 		D198820023335EE200AE84C0 /* DATool.m in Sources */ = {isa = PBXBuildFile; fileRef = D19881FF23335EE200AE84C0 /* DATool.m */; };
@@ -29,8 +28,6 @@
 		9DCD6A271F7F9ACFF55A9478 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		D13CA8432340515700F9DE0B /* demo说明.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "demo说明.txt"; sourceTree = SOURCE_ROOT; };
 		D174F12B23321B0300FF1598 /* test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.pch; sourceTree = "<group>"; };
-		D18722BC233DA7E300616E3E /* Persion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Persion.h; sourceTree = "<group>"; };
-		D18722BD233DA7E300616E3E /* Persion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persion.m; sourceTree = "<group>"; };
 		D19881F62333251F00AE84C0 /* ApiBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiBase.m; sourceTree = "<group>"; };
 		D19881F72333251F00AE84C0 /* ApiBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiBase.h; sourceTree = "<group>"; };
 		D19881F92333284000AE84C0 /* DAApiBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAApiBase.m; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 				D1ED2BD822C9FE8E0081BC26 /* ViewController.m */,
 				D1ED2BEB22C9FEA30081BC26 /* SecondViewController.h */,
 				D1ED2BEA22C9FEA30081BC26 /* SecondViewController.m */,
-				D18722BC233DA7E300616E3E /* Persion.h */,
-				D18722BD233DA7E300616E3E /* Persion.m */,
 				D1ED2BDA22C9FE8E0081BC26 /* Main.storyboard */,
 				D1ED2BDD22C9FE8F0081BC26 /* Assets.xcassets */,
 				D1ED2BDF22C9FE8F0081BC26 /* LaunchScreen.storyboard */,
@@ -173,6 +168,7 @@
 				D1ED2BCE22C9FE8E0081BC26 /* Frameworks */,
 				D1ED2BCF22C9FE8E0081BC26 /* Resources */,
 				DDC6DD2680A7047D8F4F2298 /* [CP] Copy Pods Resources */,
+				1B25E8E8A92888B07E0B0B04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +226,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B25E8E8A92888B07E0B0B04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test/Pods-test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test/Pods-test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test/Pods-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		669009B1112AEBAE58F1FA1C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,7 +293,6 @@
 				D198820023335EE200AE84C0 /* DATool.m in Sources */,
 				D1ED2BD922C9FE8E0081BC26 /* ViewController.m in Sources */,
 				D1ED2BE422C9FE8F0081BC26 /* main.m in Sources */,
-				D18722BE233DA7E300616E3E /* Persion.m in Sources */,
 				D19881F82333252000AE84C0 /* ApiBase.m in Sources */,
 				D19881FB2333284000AE84C0 /* DAApiBase.m in Sources */,
 				D1ED2BD622C9FE8E0081BC26 /* AppDelegate.m in Sources */,

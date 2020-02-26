@@ -10,9 +10,6 @@
 #import <AFNetworking.h>
 #import <NSLogger.h>
 
-#ifdef DEBUG
-//#import <DoraemonKit/DoraemonManager.h>
-#endif
 
 @interface AppDelegate ()
 
@@ -22,21 +19,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-#ifdef DEBUG
-   
-    // 默认
-   // [[DoraemonManager shareInstance] install];
-#endif
-    
-   
-    
-    //LoggerSetupBonjourForBuildUser();
-    // 保存本地日志
-//    NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//    NSString *logPath = [cacheDirectory stringByAppendingPathComponent:@"log.rawnsloggerdata"];
-//    LoggerSetBufferFile(NULL, (__bridge CFStringRef)logPath);
     
     return YES;
 }

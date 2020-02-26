@@ -8,12 +8,12 @@ target 'test' do
   pod 'MJExtension'
   pod 'NSLogger'
   pod 'IQKeyboardManager'
- 
-  pod 'PLCrashReporter'
   
   #日志输出
   pod 'PLCrashReporter'
   
   pod 'Masonry'
+  
+  pod 'LookinServer', :configurations => ['Debug']
   
 end

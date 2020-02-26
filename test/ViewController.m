@@ -8,15 +8,12 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
-#import "Persion.h"
-#import <NSLogger.h>
-//#import <PLCrashReporter.h>
+#import <CrashReporter/CrashReporter.h>
 
 
 @interface ViewController ()
 
-@property (nonatomic,strong) UIButton *btn;
-@property (nonatomic,strong) Persion *person;
+
 @end
 
 @implementation ViewController
@@ -25,33 +22,17 @@
     [super viewDidLoad];
 
     
-    self.btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 88, 100, 50)];
-    [self.view addSubview:self.btn];
-    self.btn.backgroundColor = [UIColor redColor];
-    [self.btn setTitle:@"按钮" forState:UIControlStateNormal];
+    [self setupUI];
     
-    GALLog(@"测试一下");
-   // [self test2];
-    [self cocoaLumberjackDemo];
-   
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(jumpToSecondController)];
+    
+   // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(startMonitor)];
 }
 
-
-#pragma mark - CocoaLumberjack 用法
-- (void)cocoaLumberjackDemo {
-    
-//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-//    fileLogger.rollingFrequency = 60 * 60 * 24;
-//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-//    [DDLog addLogger:fileLogger];
-    
-    NSLog(@"cocoaLumberjackDemo");
-    
-}
 
 
 #pragma mark - 'CGRectDivide' 使用方法
-- (void)test2 {
+- (void)setupUI {
     
     void (^addGrid)(CGRect) = ^(CGRect frame) {
         UIView *grid = [[UIView alloc] initWithFrame:frame];
@@ -76,51 +57,50 @@
 }
 
 
-
-
-- (IBAction)btnClick:(id)sender {
+- (void)jumpToSecondController {
     SecondViewController *vc = [[SecondViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    BOOL isAdd = YES;
-    NSLog(@"跳过第一行");
-    
-    self.btn.backgroundColor = [UIColor blueColor];
-    static int count = 0;
-    if (isAdd) {
-        count = count + 1;
-    } else {
-        count = count - 2;
+
+#pragma mark --摇一摇功能
+//让当前控制器成为第一响应者，只有这样才能接收事件，所以此段代码必须加到控制器中
+- (BOOL)canBecomeFirstResponder
+{
+    return YES; // default is NO
+}
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    NSLog(@"开始摇动手机");
+}
+
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"结束");
+    if (motion == UIEventSubtypeMotionShake) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"Lookin功能列表" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"导出为 Lookin 文档" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_Export" object:nil];
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"进入 2D 模式" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"进入 3D 模式" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_3D" object:nil];
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    GALLog(@"count is %d",count);
-    
-    [self demo1];
-    
+}
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    NSLog(@"取消");
 }
 
-
-- (void)demo1 {
-    [self demo2];
-}
-
-- (void)demo2 {
-   // NSLog(@"－－－%@",[NSThread callStackSymbols]);
-    
-    /*
-     * 此方法可以在子线程销毁对象
-     */
-    self.person = [[Persion alloc] init];
-    Persion *tmp = self.person;
-    self.person = nil;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [tmp class];
-    });
-
-}
 
 
 @end
