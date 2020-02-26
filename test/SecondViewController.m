@@ -11,6 +11,8 @@
 
 @interface SecondViewController ()
 
+@property (nonatomic,strong) UILabel *timeLab;
+
 @end
 
 @implementation SecondViewController
@@ -18,18 +20,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    [self setupBackBtn];
+}
+
+
+- (void)setupBackBtn {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
-    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"返回" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = backBtnItem;
     
-    //[self timeCutDown:@"2019-12-16 09:30:00"];
+    _timeLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 74, SCREEN_WIDTH, 20)];
+    _timeLab.textAlignment = NSTextAlignmentCenter;
+    _timeLab.textColor = [UIColor redColor];
+    _timeLab.text = @"00:00:00";
+    [self.view addSubview:_timeLab];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    [self timeCutDown:@"2020-02-26 16:30:00"];
 }
 
 
@@ -47,7 +62,7 @@
     NSDate *createDate = [fmt dateFromString:createAtStr];
     //4 计算当前时间和创建时间的时间差
     NSDate *nowDate = [NSDate date];
-    __block int interval = [nowDate timeIntervalSinceDate:createDate];
+    __block int interval = [createDate timeIntervalSinceDate:nowDate];
     
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     __block dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
@@ -57,12 +72,14 @@
             dispatch_source_cancel(timer);
             timer = nil;
             dispatch_async(dispatch_get_main_queue(), ^{
-                
+                NSLog(@"倒计时结束");
             });
             
         }else {
-            [self getDetailTimeWithTimestamp:interval];
-            interval--;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self getDetailTimeWithTimestamp:interval];
+                interval--;
+            });
         }
     });
     dispatch_resume(timer);
@@ -83,7 +100,7 @@
     NSInteger minute = (ms - day * dd - hour * hh) / mi;// 分
     NSInteger second = (ms - day * dd - hour * hh - minute * mi) / ss;// 秒
     NSLog(@"%zd日:%zd时:%zd分:%zd秒",day,hour,minute,second);
-    
+    _timeLab.text = [NSString stringWithFormat:@"%zd日:%zd时:%zd分:%zd秒",day,hour,minute,second];
 }
 
 - (void)shareToApp {

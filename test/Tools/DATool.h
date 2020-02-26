@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DATool : NSObject
 
+// 打印日志到本地文件中
 + (void)saveLogToLocalFile;
 
 @end

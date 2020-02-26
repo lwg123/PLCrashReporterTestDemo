@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import <AFNetworking.h>
-#import <NSLogger.h>
-
 
 @interface AppDelegate ()
 

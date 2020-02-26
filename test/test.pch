@@ -18,8 +18,7 @@
 // 第三方库头文件
 #import <MJExtension.h>
 #import <YYModel.h>
-
-//#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <NSLogger.h>
 
 #endif
 

@@ -19,6 +19,8 @@
 		D1ED2BE122C9FE8F0081BC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ED2BDF22C9FE8F0081BC26 /* LaunchScreen.storyboard */; };
 		D1ED2BE422C9FE8F0081BC26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ED2BE322C9FE8F0081BC26 /* main.m */; };
 		D1ED2BEC22C9FEA30081BC26 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ED2BEA22C9FEA30081BC26 /* SecondViewController.m */; };
+		D1F0BEFF2406538B00B231A6 /* cpuUsageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F0BEFE2406538B00B231A6 /* cpuUsageTool.m */; };
+		D1F0BF02240654B700B231A6 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F0BF01240654B700B231A6 /* CircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		D1ED2BE322C9FE8F0081BC26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1ED2BEA22C9FEA30081BC26 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D1ED2BEB22C9FEA30081BC26 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D1F0BEFD2406538B00B231A6 /* cpuUsageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cpuUsageTool.h; sourceTree = "<group>"; };
+		D1F0BEFE2406538B00B231A6 /* cpuUsageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cpuUsageTool.m; sourceTree = "<group>"; };
+		D1F0BF00240654B700B231A6 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		D1F0BF01240654B700B231A6 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 			children = (
 				D19881FE23335EE200AE84C0 /* DATool.h */,
 				D19881FF23335EE200AE84C0 /* DATool.m */,
+				D1F0BEFD2406538B00B231A6 /* cpuUsageTool.h */,
+				D1F0BEFE2406538B00B231A6 /* cpuUsageTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -130,6 +138,8 @@
 				D1ED2BD822C9FE8E0081BC26 /* ViewController.m */,
 				D1ED2BEB22C9FEA30081BC26 /* SecondViewController.h */,
 				D1ED2BEA22C9FEA30081BC26 /* SecondViewController.m */,
+				D1F0BF00240654B700B231A6 /* CircleView.h */,
+				D1F0BF01240654B700B231A6 /* CircleView.m */,
 				D1ED2BDA22C9FE8E0081BC26 /* Main.storyboard */,
 				D1ED2BDD22C9FE8F0081BC26 /* Assets.xcassets */,
 				D1ED2BDF22C9FE8F0081BC26 /* LaunchScreen.storyboard */,
@@ -291,8 +301,10 @@
 			files = (
 				D1ED2BEC22C9FEA30081BC26 /* SecondViewController.m in Sources */,
 				D198820023335EE200AE84C0 /* DATool.m in Sources */,
+				D1F0BF02240654B700B231A6 /* CircleView.m in Sources */,
 				D1ED2BD922C9FE8E0081BC26 /* ViewController.m in Sources */,
 				D1ED2BE422C9FE8F0081BC26 /* main.m in Sources */,
+				D1F0BEFF2406538B00B231A6 /* cpuUsageTool.m in Sources */,
 				D19881F82333252000AE84C0 /* ApiBase.m in Sources */,
 				D19881FB2333284000AE84C0 /* DAApiBase.m in Sources */,
 				D1ED2BD622C9FE8E0081BC26 /* AppDelegate.m in Sources */,
