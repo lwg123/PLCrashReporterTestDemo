@@ -12,7 +12,8 @@
 
 
 @interface ViewController ()
-
+@property (copy, nonatomic) NSString *string;
+@property (copy, nonatomic) NSArray *array;
 
 @end
 
@@ -27,6 +28,43 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(jumpToSecondController)];
     
    // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(startMonitor)];
+    
+    [self test1];
+    [self test2];
+    [self test3];
+}
+
+- (void)test3 {
+       NSMutableString * mString = [NSMutableString stringWithString:@"123"];
+       self.string = mString;
+       [mString appendString:@"666"];
+       NSLog(@"%@",self.string);
+       
+       NSMutableArray *mArray = [NSMutableArray arrayWithObjects:@1,@2,@3, nil];
+       self.array = mArray;
+       [mArray addObject:@6];
+       NSLog(@"%@",self.array);
+}
+
+- (void)test2 {
+    NSString *a = @"testa";
+    NSLog(@"block前,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+    void(^testBlock)(void) = ^(void){
+        NSLog(@"block内,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+    };
+    NSLog(@"block后,a在堆中的地址%p,a在栈中的地址%p",a,&a);
+    testBlock();
+}
+
+
+- (void)test1 {
+    __block NSString *a = @"testa";
+    NSLog(@"block前,a指向堆中的地址%p,a在栈中的地址%p",a,&a);
+    void(^testBlock)(void) = ^(void){
+        NSLog(@"block内,a指向堆中的地址%p,a在栈中的地址%p",a,&a);
+    };
+    testBlock();
+    NSLog(@"block后,a指向堆中的地址%p,a在栈中的地址%p",a,&a);
 }
 
 

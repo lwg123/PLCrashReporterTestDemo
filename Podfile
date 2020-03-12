@@ -16,4 +16,8 @@ target 'test' do
   
   pod 'LookinServer', :configurations => ['Debug']
   
+  pod 'SDWebImage'
+  
+  pod 'CTPersistance'
+  
 end
